@@ -1,4 +1,4 @@
-# mylinks-ui
+# mylinks-vue
 
 ## Project setup
 ```
