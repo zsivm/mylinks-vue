@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="list">
             <li v-for="myLink in myLinks" :key="myLink._id">
-                <MyLinkCard :myLink="myLink" />  
+                <MyLinkCard @fetch-links="fetchMyLinks" :myLink="myLink" />  
             </li>
         </ul>
     </div>
@@ -23,6 +23,9 @@ export default {
     },
     mounted() {
         this.fetchMyLinks();
+        this.eventBus.on('fetch-links', () => {
+            this.fetchMyLinks();
+        });
     },
     methods: {
         async fetchMyLinks() {

@@ -54,6 +54,7 @@ export default {
       try {
         await new RequestHandler().sendCreateMyLink(oPayload);
         this.resetForm();
+        this.eventBus.emit("fetch-links");
       } catch (e) {
         console.log(e);
       }

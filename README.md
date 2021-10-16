@@ -34,6 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 | Version | Change |
 | ------- | ----------- |
+| 0.5.0 | Fix: update list of links after deleting and adding links |
 | 0.4.0 | Feat: add delete functionality to cards |
 | 0.3.0 | Fix: added ShowMyLinks to Home, fixed design of CreateLinkForm |
 | 0.2.0 | Fix: make links open on new tab and with correct link |
