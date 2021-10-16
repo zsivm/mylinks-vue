@@ -28,6 +28,7 @@
 import RequestHandler from '@/util/RequestHandler';
 export default {
     name: "MyLinkCard",
+    emits: ["fetch-links"],
     props: [ "myLink" ],
     computed: {
         formattedDate() {
@@ -39,6 +40,7 @@ export default {
     methods: {
         async removeLinkCard() {
             await new RequestHandler().removeLinkCard(this.myLink._id);
+            this.$emit("fetch-links");
         }
     }
 }
