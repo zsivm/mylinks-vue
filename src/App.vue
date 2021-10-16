@@ -4,7 +4,7 @@
 
 <style>
 body {
-  background: linear-gradient(#141e30, #243b55);
+  background-color: #7175da;
 }
 
 #app {
