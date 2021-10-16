@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import RequestHandler from '@/util/RequestHandler';
 export default {
   name: "CreateLinkForm",
   data() {
@@ -41,27 +42,18 @@ export default {
   },
   methods: {
     createMyLink() {
-      let payload = {
+      let oPayload = {
         "title": this.title,
         "url": this.url,
         "description": this.description,
         "category": this.category
       };
-      this.sendCreateMyLink(payload);
+      this.sendCreateMyLink(oPayload);
     },
-    async sendCreateMyLink(payload) {
+    async sendCreateMyLink(oPayload) {
       try {
-        const post = await fetch("http://localhost:3000/myLinks", 
-        { method: "POST",
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }, 
-          body: JSON.stringify(payload)
-        });
-        const data = await post.json();
-        console.log(data);
-        this.resetForm()
+        await new RequestHandler().sendCreateMyLink(oPayload);
+        this.resetForm();
       } catch (e) {
         console.log(e);
       }

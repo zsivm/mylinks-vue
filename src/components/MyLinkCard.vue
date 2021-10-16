@@ -1,6 +1,9 @@
 <template>
 <div>
     <div class="container">
+        <div class="btnContainer">
+            <button class="removeBtn" @click="removeLinkCard">Remove</button>
+        </div>
         <div clas="title">
             <h3 class="text-xl">{{ myLink.title }}</h3>
         </div>
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+import RequestHandler from '@/util/RequestHandler';
 export default {
     name: "MyLinkCard",
     props: [ "myLink" ],
@@ -32,6 +36,11 @@ export default {
             return dateParts[0] + " " + dateParts[1].substring(0, 5);
         }
     },
+    methods: {
+        async removeLinkCard() {
+            await new RequestHandler().removeLinkCard(this.myLink._id);
+        }
+    }
 }
 </script>
 
@@ -42,6 +51,15 @@ export default {
     border-radius: 10px;
     box-shadow: 0 15px 30px 1px rgb(29, 29, 29);
     background-color: #daa471;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.removeBtn {
+    margin-right: 20px;
 }
 
 </style>

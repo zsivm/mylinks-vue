@@ -10,6 +10,7 @@
 
 <script>
 import MyLinkCard from '@/components/MyLinkCard';
+import RequestHandler from '@/util/RequestHandler';
 export default {
     name: "ShowMyLinks",
     components: {
@@ -25,22 +26,7 @@ export default {
     },
     methods: {
         async fetchMyLinks() {
-            try {
-                const get = await fetch("http://localhost:3000/myLinks", 
-                { 
-                    method: "GET",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    }
-                });
-
-                const data = await get.json();
-                this.myLinks = data;
-                console.log(data);
-            } catch (e) {
-                console.log(e);
-            }
+            this.myLinks = await new RequestHandler().fetchLinks();
         },
     }
 }
