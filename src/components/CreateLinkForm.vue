@@ -3,13 +3,13 @@
     <h2 class="white text-2xl">Create MyLink</h2>
     <form @submit.prevent class="rounded-sm">
       <label for="title">Title</label>
-      <input v-model="title" autocomplete="off" type="text" id="title" name="title">
+      <input v-model="title" type="text" id="title" name="title" placeholder="Title...">
         
       <label for="url">Url</label>
-      <input v-model="url" autocomplete="off" type="text" id="url" name="url">
+      <input v-model="url" type="text" id="url" name="url" placeholder="Url...">
 
       <label for="description">Description</label>
-      <textarea v-model="description" class="w-full" id="description" name="description" maxlength = "100" rows="2"></textarea>
+      <textarea v-model="description" class="w-full" id="description" name="description" maxlength = "100" rows="2" placeholder="Description..."></textarea>
 
       <label for="category">Category</label>
       <select v-model="category" id="category" name="category">
@@ -63,16 +63,9 @@ export default {
 
         const data = await post.json();
         console.log(data);
-        this.resetForm()
       } catch (e) {
         console.log(e);
       }
-    },
-    resetForm() {
-      this.title = "";
-      this.url = "";
-      this.description = "";
-      this.category = "";
     }
   }
 }
@@ -81,7 +74,6 @@ export default {
 <style scoped>
 input[type=text], select {
   width: 100%;
-  height: 40px;
   padding: 6px;
   display: inline-block;
   border: 1px solid #ccc;
@@ -91,7 +83,7 @@ input[type=text], select {
 
 label {
   color: white;
-  padding: 6px 0;
+  padding: 6px;
   text-align: start;
   width: 100%;
   border-radius: 4px;
@@ -110,14 +102,10 @@ button {
   width: 100%;
   margin-top: 16px;
   padding: 6px;
-  background-color: #7175da;
   display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-button:hover {
-  background-color: #6064ca;
 }
 
 .white {
@@ -129,10 +117,10 @@ button:hover {
 }
 
 .form-container {
-  border-radius: 20px;
-  background-color: rgb(47 48 51);
-  padding: 30px;
+  border-radius: 5px;
+  background-color: #daa471;
+  padding: 20px;
   margin-top: 8vh;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 30px 1px rgb(29, 29, 29);
 }
 </style>
