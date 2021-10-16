@@ -30,6 +30,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - add navbar
 - add authentication
 
-Changelog:
-|0.2.0|Fix: make links open on new tab|
-|0.1.0|Create Frontend to MyLinks app with basic functionalities|
+### Changelog:
+
+| Version | Change |
+| ------- | ----------- |
+| 0.2.0 | Fix: make links open on new tab and with correct link |
+| 0.1.0 | Create Frontend to MyLinks app with basic functionalities |
