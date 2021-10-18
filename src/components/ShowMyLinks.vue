@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div v-if="myLinks.length" class="container">
         <ul class="list">
             <li v-for="myLink in myLinks" :key="myLink._id">
                 <MyLinkCard @fetch-links="fetchMyLinks" :myLink="myLink" />  

@@ -34,6 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 | Version | Change |
 | ------- | ----------- |
+| 0.6.0 | Feat: display list of links only if list is not empty |
 | 0.5.0 | Fix: update list of links after deleting and adding links |
 | 0.4.0 | Feat: add delete functionality to cards |
 | 0.3.0 | Fix: added ShowMyLinks to Home, fixed design of CreateLinkForm |
