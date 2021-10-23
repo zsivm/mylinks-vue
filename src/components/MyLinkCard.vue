@@ -90,7 +90,7 @@ export default {
             this.toggleEditMode();
             this.actualLink = {...this.myLink};
         },
-        async onSaveClicked() {
+        onSaveClicked() {
             this.sendCreateMyLink();
             this.toggleEditMode();
         },
@@ -109,6 +109,7 @@ export default {
             try {
                 await new RequestHandler().sendEditMyLink(oPayload, this.actualLink._id);
                 this.eventBus.emit("fetch-links");
+
             } catch (e) {
                 console.log(e);
             }

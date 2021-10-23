@@ -23,8 +23,8 @@
         <option value="Other">Other</option>
       </select>
 
-      <button class="white" @click="createMyLink">Save</button>
     </form>
+    <button class="white" @click="createMyLink">Save</button>
   </div>
 </template>
 
