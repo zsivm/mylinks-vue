@@ -14,13 +14,13 @@
       <label for="category">Category</label>
       <select v-model="category" id="category" name="category">
         <option value="" disabled selected hidden>Select a category</option>
-        <option value="tech">Tech</option>
-        <option value="memes">Memes</option>
-        <option value="education">Education</option>
-        <option value="fun">Fun</option>
-        <option value="readlater">Read Later</option>
-        <option value="watchlater">Watch Later</option>
-        <option value="other">Other</option>
+        <option value="Tech">Tech</option>
+        <option value="Memes">Memes</option>
+        <option value="Education">Education</option>
+        <option value="Fun">Fun</option>
+        <option value="Read Later">Read Later</option>
+        <option value="Watch Later">Watch Later</option>
+        <option value="Other">Other</option>
       </select>
 
       <button class="white" @click="createMyLink">Save</button>
