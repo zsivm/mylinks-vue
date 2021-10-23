@@ -34,12 +34,31 @@ module.exports = class RequestHandler {
             body: JSON.stringify(oPayload)
           });
           const data = await post.json();
-          console.log(data);
-          //this.resetForm();
+          //console.log(data);
+          return data;
         } catch (e) {
           console.log(e);
         }
     }
+
+    async sendEditMyLink(oPayload, sId) {
+        try {
+          const patch = await fetch("http://localhost:3000/myLinks/" + sId,
+            { method: "PATCH",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(oPayload)
+            });
+
+            const data = await patch.json();
+            //console.log(data);
+            return data;
+        } catch (e) {
+          console.log(e);
+        }
+      }
 
     async removeLinkCard(sId) {
         try {

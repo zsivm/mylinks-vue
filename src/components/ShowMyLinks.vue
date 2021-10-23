@@ -39,7 +39,6 @@ export default {
     margin: 30px auto;
     width: 50%;
     height: auto;
-    background-color:cadetblue;
 }
 
 ul {
